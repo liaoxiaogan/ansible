@@ -1,0 +1,13 @@
+---
+- name: list the files and dirctory on CetOS
+  hosts: all
+  become: no
+  tasks:
+    - name: rule list command
+      shell: ls -la
+      args:
+        chdir: ~
+      register: ls_output
+    - name: ping output
+      debug: 
+        var: ls_output.stdout_lines

@@ -1,0 +1,10 @@
+---
+- name: remove application from CentOS
+  hosts: all
+  become: true
+  tasks:
+  - name: remove the specific app
+    package:
+      name: podman      
+      state: absent
+    register: removal_result

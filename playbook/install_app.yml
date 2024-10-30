@@ -1,0 +1,9 @@
+---
+- name: insall application from CentOS
+  hosts: all
+  become: true
+  tasks:
+  - name: insall the specific app
+    package:
+      name: podman
+      state: present
