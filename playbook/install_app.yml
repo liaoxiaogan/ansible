@@ -7,3 +7,4 @@
     package:
       name: podman
       state: present
+    when: ansible_distribution_version == "Ubuntu"
